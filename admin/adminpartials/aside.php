@@ -37,6 +37,11 @@
           </a>
         </li>
         <li>
+          <a href="productsshow.php">
+            <i class="fa fa-th"></i> <span>Products Listing</span>
+          </a>
+        </li>
+        <li>
           <a href="adminpartials/logout.php">
             <i class="fa fa-th"></i> <span>Sign Out</span>
           </a>
