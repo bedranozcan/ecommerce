@@ -28,24 +28,26 @@ include("adminpartials/head.php")
     <!-- Main content -->
     <section class="content">
       <div class="row">
-          <div class="col-sm-3">
+          <div class="col-sm-9">
+           <a href="categories.php">
+            <button style="color:green;">Add New Categories</button>
+           </a>
             <?php 
             include('../partials/connect.php');
-            $id=$_GET['pro_id'];
-            $sql="SELECT * FROM products WHERE id='$id'";
+            $sql="Select * from  categories";
             $results=$connect->query($sql);
-            $final=$results->fetch_assoc();
-            ?>
-            <h3>Name:<?php echo $final['name']?></h3><hr><br>
-            <h3>Price:<?php echo $final['price']?></h3><hr><br>
-            <h3>Description:<?php echo $final['description']?></h3><hr><br>
-            <img src="../<?php echo $final['picture']?>" alt="No File" style="height:300px; width:300px;">
- 
-
-
-
-
-
+            while ($final=$results->fetch_assoc()) { ?>
+              <a href="catshow.php?cat_id=<?php echo $final['id']?>">
+              <h3><?php echo $final['id']?>:<?php echo $final['name']?></h3><br>
+            </a>
+            <a href="catupdate.php?up_id=<?php echo $final['id']?>">
+              <button style="color:green;">Update</button>
+            </a>
+            <a href="categoriesdelete.php?del_id=<?php echo $final['id']?>">
+              <button style="color:red;">Delete</button>
+            </a><hr>
+            <?php }
+             ?>
           </div>
       </div>
     </section>

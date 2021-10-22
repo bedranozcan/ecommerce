@@ -6,5 +6,5 @@ $category=$_POST['name'];
 $sql="INSERT INTO categories(name) values ('$category')";
 
 $connect->query($sql);
-
+header('location:categoriesshow.php');
 ?>

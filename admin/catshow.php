@@ -28,24 +28,22 @@ include("adminpartials/head.php")
     <!-- Main content -->
     <section class="content">
       <div class="row">
-          <div class="col-sm-3">
+          <div class="col-sm-9">
             <?php 
+
             include('../partials/connect.php');
-            $id=$_GET['pro_id'];
-            $sql="SELECT * FROM products WHERE id='$id'";
+
+            $id=$_GET['cat_id'];
+
+            $sql="SELECT * FROM categories WHERE id='$id'";
+
             $results=$connect->query($sql);
+
             $final=$results->fetch_assoc();
+            
             ?>
             <h3>Name:<?php echo $final['name']?></h3><hr><br>
-            <h3>Price:<?php echo $final['price']?></h3><hr><br>
-            <h3>Description:<?php echo $final['description']?></h3><hr><br>
-            <img src="../<?php echo $final['picture']?>" alt="No File" style="height:300px; width:300px;">
- 
-
-
-
-
-
+            
           </div>
       </div>
     </section>

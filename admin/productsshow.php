@@ -29,6 +29,9 @@ include("adminpartials/head.php")
     <section class="content">
       <div class="row">
           <div class="col-sm-9">
+           <a href="products.php">
+            <button style="color:green;">Add New Product</button>
+           </a>
             <?php 
             include('../partials/connect.php');
             $sql="Select * from  products";

@@ -28,8 +28,6 @@ include("adminpartials/head.php")
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <div class="col-sm-3">
-          </div>
           <div class="col-sm-6">
         <form role="form" action="producthandler.php" method="POST" enctype="multipart/form-data">
           <h1>Products</h1>
