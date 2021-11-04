@@ -9,7 +9,7 @@ include("partials/header.php");
 ?>
 
 	<!-- Title page -->
-	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.jpg');">
+	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/about1.jpg');">
 		<h2 class="ltext-105 cl0 txt-center">
 			Contact
 		</h2>
@@ -53,7 +53,7 @@ include("partials/header.php");
 							</span>
 
 							<p class="stext-115 cl6 size-213 p-t-18">
-								Coza Store Center 8th floor, 379 Hudson St, New York, NY 10018 US
+								 Center, İnönü St. No:192, 44100 Yeşilyurt/Malatya
 							</p>
 						</div>
 					</div>
@@ -85,7 +85,7 @@ include("partials/header.php");
 							</span>
 
 							<p class="stext-115 cl1 size-213 p-t-18">
-								contact@example.com
+								kayisigiyim@gmail.com
 							</p>
 						</div>
 					</div>
