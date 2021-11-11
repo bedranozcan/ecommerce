@@ -15,7 +15,7 @@ include("partials/connect.php");
 					<div class="right-top-bar flex-w h-full">
 						
 
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
+						<a href="customerforms.php" class="flex-c-m trans-04 p-lr-25">
 							My Account
 						</a>
 

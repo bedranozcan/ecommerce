@@ -13,8 +13,8 @@ if (isset($_POST['update'])) {
 					window.location.href='cart.php';
 					</script>
 				";
-						# code...
-					}		# code...
+						
+					}		
 	}
 	# code...
 }

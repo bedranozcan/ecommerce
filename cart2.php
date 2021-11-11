@@ -2,12 +2,12 @@
 <html lang="en">
 <?php
 session_start();
+
 include ("partials/head.php");
 ?>
 <body class="animsition">
-	<?php
+<?php
 	include ("partials/header.php");
-
 
 ?>
 
@@ -20,7 +20,7 @@ include ("partials/head.php");
 			</a>
 
 			<span class="stext-109 cl4">
-				Shoping Cart
+				Shopitime
 			</span>
 		</div>
 	</div>
@@ -39,15 +39,17 @@ include ("partials/head.php");
 									<th class="column-2">Name</th>
 									<th class="column-3">Price</th>
 									<th class="column-4">Quantity</th>
-									<th class="column-5">Update</th>
+									<th class="column-5">Total</th>
 								</tr>
 								<?php 
 								$total=0;
 								if (isset($_SESSION['cart'])) {
 									
-									foreach($_SESSION['cart'] as $key => $value) {
-									
+									foreach ($_SESSION['cart'] as $key => $value) {
 									$total=$total+$value['item_price']*$value['quantity'];
+									
+
+
 
 								?>
 								<tr class="table_row">
@@ -61,26 +63,21 @@ include ("partials/head.php");
 									</td>
 									<td class="column-2"><?php echo $value['item_name'] ?>;</td>
 									<td class="column-3">$ <?php echo $value['item_price'] ?></td>
+									<form action="handler/orderhandler.php" method="POST">
 									<td class="column-4">
-										<form action="cartupdate.php" method="POST">
-											
 										<div class="wrap-num-product flex-w m-l-auto m-r-0">
 											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
 												<i class="fs-16 zmdi zmdi-minus"></i>
 											</div>
 
-											<input name="quantity" class="mtext-104 cl3 txt-center num-product" type="number" name="num-product1" value="<?php echo $value['quantity'] ?>">
+											<input class="mtext-104 cl3 txt-center num-product" type="number" name="quantity" value="<?php echo $value['quantity'] ?>">
 
 											<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
 												<i class="fs-16 zmdi zmdi-plus"></i>
 											</div>
 										</div>
 									</td>
-									<td class="column-5">
-										<button class="btn btn-sm btn-outline-primary" name="update">Update</button>
-											<input type="hidden" name="item_name" value="<?php echo $value['item_name'] ?>">
-											</form>
-										</td>
+									<td class="column-5">$ <?php echo $value['item_price'] ?></td>
 								</tr>
 								<?php }
 									
@@ -93,8 +90,10 @@ include ("partials/head.php");
 							<div class="flex-w flex-m m-r-20 m-tb-5">
 								
 							</div>
-
-							
+							<div class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
+								Update Cart
+							</div>
+						
 						</div>
 					</div>
 				</div>
@@ -119,9 +118,62 @@ include ("partials/head.php");
 							</div>
 						</div>
 
-						<button onclick="location.href='cart2.php'" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-							Proceed to Checkout
+						<div class="flex-w flex-t bor12 p-t-15 p-b-30">
+							<div class="size-208 w-full-ssm">
+								<span class="stext-110 cl2">
+									Shipping:
+								</span>
+							</div>
+
+							<div class="size-209 p-r-18 p-r-0-sm w-full-ssm">
+								<p class="stext-111 cl6 p-t-2">
+									We will deliver anywhere by our Anbu Black Ops.
+								</p>
+								
+								<div class="p-t-15">
+									
+
+									
+									<form action="handler/orderhandler.php" method="POST">
+									<div class="bor8 bg0 m-b-12">
+										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="address" placeholder="Address">
+									</div>
+
+									<div class="bor8 bg0 m-b-22">
+										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="phone" placeholder="Phone number">
+									</div>
+									<div class="rs1-select2 rs2-select2 bor8 bg0 m-b-12 m-t-9">
+										<select class="js-select2" name="payment">
+											<option value="cash">Cash on delivery</option>
+											<option value="paypal">Paypal</option>
+										</select>
+										<div class="dropDownSelect2"></div>
+									</div>
+									
+									
+										
+								</div>
+							</div>
+						</div>
+
+						<div class="flex-w flex-t p-t-27 p-b-33">
+							<div class="size-208">
+								<span class="mtext-101 cl2">
+									Total:
+								</span>
+							</div>
+
+							<div class="size-209 p-t-1">
+								<span class="mtext-110 cl2">
+									$<?php echo $total ?>
+								</span>
+							</div>
+						</div>
+						<input type="hidden" name="total" value="<?php echo $total ?>">
+						<button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer" type="submit" name="placeorder">
+							Place Order
 						</button>
+					</form>
 					</div>
 				</div>
 			</div>
