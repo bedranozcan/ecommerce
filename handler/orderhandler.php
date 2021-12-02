@@ -25,5 +25,6 @@ foreach ($_SESSION['cart'] as $key => $value) {
 
 
 }
+unset($_SESSION['cart']);
 
 ?>

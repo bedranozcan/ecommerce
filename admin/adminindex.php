@@ -37,12 +37,18 @@ include("adminpartials/head.php");
        <div class="col-sm-9">
         <a href="categories.php">
           <button style="color:green">Add Categories</button>
-       </a>
-       <hr>
-     </div>
-   </section>
-   <!-- /.content -->
- </div>
+        </a>
+        <hr>
+      </div>
+      <div class="col-sm-9">
+        <a href="orders.php">
+          <button style="color:green">Wiev Orders</button>
+        </a>
+        <hr>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
 </div>
 <!-- /.content-wrapper -->
 <?php 
